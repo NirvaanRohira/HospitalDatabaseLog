@@ -18,12 +18,10 @@ public class PatientData {
         this.treatmentReceived = treatmentReceived;
         this.condition = condition;
         this.treatmentCost = treatmentCost;
-
-        }
-    public String getName() {
-
-        return this.name; 
-
     }
 
+    public String getName() {
+        return this.name;
+    }
 }
+
