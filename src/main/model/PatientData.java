@@ -15,6 +15,7 @@ public class PatientData {
                        int treatmentCost) {
         this.name = name;
         this.age = age;
+        this.daysStayed = daysStayed;
         this.treatmentReceived = treatmentReceived;
         this.condition = condition;
         this.treatmentCost = treatmentCost;
@@ -22,6 +23,21 @@ public class PatientData {
 
     public String getName() {
         return this.name;
+    }
+    public int getAge() {
+        return this.age;
+    }
+    public int getDaysStayed() {
+        return this.daysStayed;
+    }
+    public String getTreatmentReceived() {
+        return this.treatmentReceived;
+    }
+    public String getCondition() {
+        return this.condition;
+    }
+    public int getTreatmentCost() {
+        return this.treatmentCost;
     }
 }
 

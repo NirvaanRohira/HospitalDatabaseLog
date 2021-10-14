@@ -13,6 +13,7 @@ public class ListOfPatientData {
 
     }
 
+    //Effects: Returns the name of the list
     public String getNameList() {
         return this.nameList;
     }
@@ -24,10 +25,13 @@ public class ListOfPatientData {
 
     }
 
+    //REQUIRES: A non empty list
     //MODIFIES: this
     //EFFECTS: removes a Patient Profile and returns true
     public boolean removesPatientData(PatientData p) {
         return patientData.remove(p);
+
+
 
     }
 
@@ -50,8 +54,6 @@ public class ListOfPatientData {
     public boolean isEmpty() {
         return patientData.size() == 0;
     }
-
-
 
 
 }
