@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class ListOfPatientData {
     private String nameList;
-    private LinkedList<PatientData> patientData = null;
+    private LinkedList<PatientData> patientData;
 
     //EFFECTS: Creates a new List of Patient Data
     public ListOfPatientData(String nameList) {
