@@ -26,7 +26,3 @@ search and believe that designing one will help me gain a better understanding o
 As a user, I want to be able to fill In Patient Details in terms of a form
 As a user, I want to be able to Manually add, and remove Patient Details
 As a user, I want to be able to Add in Birthdate, Name, Condition, Age, Care Recieved, Days Stayed, Bill to the form
-As a user, I want to be able to delete Patient History when the database is full or when the record exceeds a certain number
-As a user, I want to be able to see the number of Patients in the database
-As a user, I want to be able to Save the database and access it after I close it
-As a user, I want to be able to Search for a patient by LastName, FirstName to see the outstanding bill due 
