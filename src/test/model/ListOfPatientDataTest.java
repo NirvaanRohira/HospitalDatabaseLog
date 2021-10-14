@@ -71,13 +71,20 @@ public class ListOfPatientDataTest {
 
 
     @Test
-    void testGetNextPatientsData() {
+    void testGetNextPatientsDataNonEmpty() {
         newlist.addPatientData(p1);
         newlist.addPatientData(p2);
         newlist.addPatientData(p3);
         newlist.getNextPatientData();
         assertEquals(2, newlist.length());
 
+
+    }
+
+    @Test
+    void testGetNextPatientDataEmpty(){
+        ListOfPatientData emptylist = new ListOfPatientData("empty");
+        assertNull(emptylist.getNextPatientData());
 
     }
 
