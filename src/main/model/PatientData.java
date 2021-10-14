@@ -10,7 +10,6 @@ public class PatientData {
     private final int costPerDay = 100; //Cost of Stay Per Day in CAD
 
 
-
     public PatientData(String name, int age, int daysStayed, String treatmentReceived, String condition,
                        int treatmentCost) {
         this.name = name;
@@ -24,18 +23,23 @@ public class PatientData {
     public String getName() {
         return this.name;
     }
+
     public int getAge() {
         return this.age;
     }
+
     public int getDaysStayed() {
         return this.daysStayed;
     }
+
     public String getTreatmentReceived() {
         return this.treatmentReceived;
     }
+
     public String getCondition() {
         return this.condition;
     }
+
     public int getTreatmentCost() {
         return this.treatmentCost;
     }
