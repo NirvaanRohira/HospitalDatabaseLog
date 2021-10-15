@@ -25,4 +25,10 @@ search and believe that designing one will help me gain a better understanding o
 ##User Story
 As a user, I want to be able to fill In Patient Details in terms of a form
 As a user, I want to be able to Manually add, and remove Patient Details
-As a user, I want to be able to Add in Birthdate, Name, Condition, Age, Care Recieved, Days Stayed, Bill to the form
+As a user, I want to be able to Add in Name
+As a user, I want to be able to Add in Age
+As a user, I want to be able to Add in Duration of Stay
+As a user, I want to be able to Add in Treatment Recieved
+As a user, I want to be able to Add in Condition
+As a user, I want to be able to Add in Cost
+As a user, I want to be able to input and view these in the console.
