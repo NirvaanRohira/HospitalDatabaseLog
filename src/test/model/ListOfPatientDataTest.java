@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+//Tests for the different functions regarding a list of patient data
 public class ListOfPatientDataTest {
 
     ListOfPatientData newlist;

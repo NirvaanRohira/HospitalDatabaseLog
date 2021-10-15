@@ -2,6 +2,7 @@ package model;
 
 import java.util.LinkedList;
 
+//Functions for a list of Patient data which will be made and operated with a database
 public class ListOfPatientData {
     private String nameList;
     private LinkedList<PatientData> patientData;

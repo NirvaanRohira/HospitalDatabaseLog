@@ -4,8 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-class PatientDataTest {
+//Tests for the different setters and getters in the Patient Data CLass
+public class PatientDataTest {
     PatientData p1 = new PatientData("Nirvaan", 19, 2, "Stitches",
                                  "Deep Cuts", 2);
     @Test

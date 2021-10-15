@@ -1,10 +1,10 @@
 package ui;
-//Patient Application
 
 import model.ListOfPatientData;
 import model.PatientData;
 import java.util.Scanner;
 
+//Patient Application
 public class PatientApp {
     private Scanner input;
     private PatientData patient;
@@ -17,7 +17,7 @@ public class PatientApp {
     //EFFECTS: Takes and processes user inputs
     private void runPatient() {
         boolean keepGoing = true;
-        String command = null;
+        String command;
 
         init();
 
@@ -44,6 +44,8 @@ public class PatientApp {
 
     }
 
+    // MODIFIES: this
+    // EFFECTS: initializes PatientData
     private void init() {
         //patient = new PatientData();
         //Inititalse patient is an issue
@@ -63,6 +65,8 @@ public class PatientApp {
     }
 
 
+    // MODIFIES: this
+    // EFFECTS: outputs list format of inputted patient data
     private void doAddPerson() {
         System.out.print("Add the Patient's Name: ");
         String name = input.next();
@@ -84,9 +88,6 @@ public class PatientApp {
 
 
     }
-//    // EFFECTS: prints balance of account to the screen
-//    private void printBuildList(PatientData p) {
-//        System.out.printf("Patient is:\n", p);
-//    }
+
 
 }
