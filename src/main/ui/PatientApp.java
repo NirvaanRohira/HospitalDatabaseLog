@@ -1,6 +1,7 @@
 package ui;
 //Patient Application
 
+import model.ListOfPatientData;
 import model.PatientData;
 import java.util.Scanner;
 
@@ -55,6 +56,7 @@ public class PatientApp {
     private void processCommand(String command) {
         if (command.equals("a")) {
             doAddPerson();
+
         } else {
             System.out.println("Invalid Selection...");
         }
@@ -74,8 +76,17 @@ public class PatientApp {
         String condition = input.next();
         System.out.print("Add the Patient's Total Cost: ");
         int cost = Integer.parseInt(input.next());
-        PatientData buildlist = new PatientData(name, age, stayTime, treatmentRecieved, condition, cost);
+        PatientData p1 = new PatientData(name, age, stayTime, treatmentRecieved, condition, cost);
+        ListOfPatientData buildlist = new ListOfPatientData("today");
+        buildlist.addPatientData(p1);
+        System.out.println("(" + name + " " + age
+                + " " + stayTime + " " + treatmentRecieved + " " + condition + " " + cost + ")");
+
 
     }
+//    // EFFECTS: prints balance of account to the screen
+//    private void printBuildList(PatientData p) {
+//        System.out.printf("Patient is:\n", p);
+//    }
 
 }
