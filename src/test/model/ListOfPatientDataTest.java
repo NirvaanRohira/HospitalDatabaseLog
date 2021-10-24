@@ -37,14 +37,17 @@ public class ListOfPatientDataTest {
 
     @Test
     void testAddOnePatientData() {
-        assertTrue(newlist.addPatientData(p4));
+        assertTrue(newlist.addPatientData(p4.getName(), p4.getAge(), p4.getDaysStayed(), p4.getTreatmentReceived(),
+                p4.getCondition(), p4.getTreatmentCost()));
 
     }
 
     @Test
     void testAddManyPatientData() {
-        newlist.addPatientData(p2);
-        newlist.addPatientData(p3);
+        newlist.addPatientData(p2.getName(), p2.getAge(), p2.getDaysStayed(), p2.getTreatmentReceived(),
+                p2.getCondition(), p2.getTreatmentCost());
+        newlist.addPatientData(p3.getName(), p3.getAge(), p3.getDaysStayed(), p3.getTreatmentReceived(),
+                p3.getCondition(), p3.getTreatmentCost());
         assertEquals(2, newlist.length());
 
 
@@ -52,19 +55,26 @@ public class ListOfPatientDataTest {
 
     @Test
     void testRemovesOnePatientData() {
-        newlist.addPatientData(p1);
-        newlist.removesPatientData(p1);
-        assertEquals(0, newlist.length());
+        newlist.addPatientData(p3.getName(), p3.getAge(), p3.getDaysStayed(), p3.getTreatmentReceived(),
+                p3.getCondition(), p3.getTreatmentCost());
+        newlist.removesPatientData(p3.getName(), p3.getAge(), p3.getDaysStayed(), p3.getTreatmentReceived(),
+                p3.getCondition(), p3.getTreatmentCost());
+        assertEquals(0, newlist.viewList().size());
 
 
     }
 
     @Test
     void testRemovesManyPatientData() {
-        newlist.addPatientData(p1);
-        newlist.addPatientData(p2);
-        newlist.removesPatientData(p1);
-        newlist.removesPatientData(p2);
+        newlist.addPatientData(p1.getName(), p1.getAge(), p1.getDaysStayed(), p1.getTreatmentReceived(),
+                p1.getCondition(), p1.getTreatmentCost());
+        newlist.addPatientData(p2.getName(), p2.getAge(), p2.getDaysStayed(), p2.getTreatmentReceived(),
+                p2.getCondition(), p2.getTreatmentCost());
+        newlist.removesPatientData(p1.getName(), p1.getAge(), p1.getDaysStayed(), p1.getTreatmentReceived(),
+                p1.getCondition(), p1.getTreatmentCost());
+        newlist.removesPatientData(p2.getName(), p2.getAge(), p2.getDaysStayed(), p2.getTreatmentReceived(),
+                p2.getCondition(), p2.getTreatmentCost());
+
         assertEquals(0, newlist.length());
 
 
@@ -73,9 +83,12 @@ public class ListOfPatientDataTest {
 
     @Test
     void testGetNextPatientsDataNonEmpty() {
-        newlist.addPatientData(p1);
-        newlist.addPatientData(p2);
-        newlist.addPatientData(p3);
+        newlist.addPatientData(p1.getName(), p1.getAge(), p1.getDaysStayed(), p1.getTreatmentReceived(),
+                p1.getCondition(), p1.getTreatmentCost());
+        newlist.addPatientData(p2.getName(), p2.getAge(), p2.getDaysStayed(), p2.getTreatmentReceived(),
+                p2.getCondition(), p2.getTreatmentCost());
+        newlist.addPatientData(p3.getName(), p3.getAge(), p3.getDaysStayed(), p3.getTreatmentReceived(),
+                p3.getCondition(), p3.getTreatmentCost());
         newlist.getNextPatientData();
         assertEquals(2, newlist.length());
 
@@ -91,9 +104,12 @@ public class ListOfPatientDataTest {
 
     @Test
     void testLength() {
-        newlist.addPatientData(p1);
-        newlist.addPatientData(p2);
-        newlist.addPatientData(p2);
+        newlist.addPatientData(p1.getName(), p1.getAge(), p1.getDaysStayed(), p1.getTreatmentReceived(),
+                p1.getCondition(), p1.getTreatmentCost());
+        newlist.addPatientData(p2.getName(), p2.getAge(), p2.getDaysStayed(), p2.getTreatmentReceived(),
+                p2.getCondition(), p2.getTreatmentCost());
+        newlist.addPatientData(p3.getName(), p3.getAge(), p3.getDaysStayed(), p3.getTreatmentReceived(),
+                p3.getCondition(), p3.getTreatmentCost());
         assertEquals(3, newlist.length());
 
 
@@ -109,8 +125,10 @@ public class ListOfPatientDataTest {
 
     @Test
     void testIsEmptyFalse() {
-        newlist.addPatientData(p1);
-        newlist.addPatientData(p2);
+        newlist.addPatientData(p1.getName(), p1.getAge(), p1.getDaysStayed(), p1.getTreatmentReceived(),
+                p1.getCondition(), p1.getTreatmentCost());
+        newlist.addPatientData(p2.getName(), p2.getAge(), p2.getDaysStayed(), p2.getTreatmentReceived(),
+                p2.getCondition(), p2.getTreatmentCost());
         assertFalse(newlist.isEmpty());
 
     }
