@@ -1,7 +1,10 @@
 package model;
 
+import org.json.JSONObject;
+import persistence.Writable;
+
 //Specific data related to creating a patient profile for each person in the database
-public class PatientData {
+public class PatientData implements Writable {
     private String name; //First Name of the Patient
     private int age; //Age of the Patient
     private int daysStayed; //Number of Days Stayed
@@ -51,6 +54,19 @@ public class PatientData {
     //EFFECTS: Gets the name of a given patient
     public int getTreatmentCost() {
         return this.treatmentCost;
+    }
+
+    // EFFECTS: Creates a json object of student profile
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("age", age);
+        json.put("Days Stayed", daysStayed);
+        json.put("Treatment Received", treatmentReceived);
+        json.put("Condition", condition);
+        json.put("Treatment Cost", treatmentCost);
+        return json;
     }
 }
 

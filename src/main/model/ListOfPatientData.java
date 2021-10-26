@@ -1,10 +1,14 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.Writable;
+
 import java.util.LinkedList;
 import java.util.List;
 
 //Functions for a list of Patient data which will be made and operated with a database
-public class ListOfPatientData {
+public class ListOfPatientData implements Writable {
     private String nameList;
     private LinkedList<PatientData> patientData;
 
@@ -85,5 +89,22 @@ public class ListOfPatientData {
         return patientData.size() == 0;
     }
 
+    // EFFECTS: creates a json object for student list
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", nameList);
+        json.put("patients", patientsToJson());
+        return json;
+    }
 
+    // EFFECTS: returns students in this studentList as a JSON array
+    private JSONArray patientsToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (PatientData s : patientData) {
+            jsonArray.put(s.toJson());
+        }
+        return jsonArray;
+    }
 }
