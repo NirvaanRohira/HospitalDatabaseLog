@@ -62,10 +62,10 @@ public class PatientData implements Writable {
         JSONObject json = new JSONObject();
         json.put("name", name);
         json.put("age", age);
-        json.put("Days Stayed", daysStayed);
-        json.put("Treatment Received", treatmentReceived);
-        json.put("Condition", condition);
-        json.put("Treatment Cost", treatmentCost);
+        json.put("daysStayed", daysStayed);
+        json.put("treatmentRecieved", treatmentReceived);
+        json.put("condition", condition);
+        json.put("treatmentCost", treatmentCost);
         return json;
     }
 }

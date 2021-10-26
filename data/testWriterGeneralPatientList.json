@@ -1,21 +1,21 @@
 {
-  "patients": [
-    {
-      "condition": "aids",
-      "treatmentCost": 100,
-      "name": "DDP",
-      "treatmentRecieved": "antibiotics",
-      "daysStayed": 100,
-      "age": 20
-    },
-    {
-      "condition": "Headache",
-      "treatmentCost": 20,
-      "name": "Casey",
-      "treatmentRecieved": "Tylenol",
-      "daysStayed": 50,
-      "age": 20
-    }
-  ],
-  "name": "Patient List"
+    "patients": [
+        {
+            "condition": "aids",
+            "treatmentRecieved": "antibiotics",
+            "daysStayed": 100,
+            "name": "DDP",
+            "treatmentCost": 100,
+            "age": 20
+        },
+        {
+            "condition": "Headache",
+            "treatmentRecieved": "Tylenol",
+            "daysStayed": 50,
+            "name": "Casey",
+            "treatmentCost": 20,
+            "age": 20
+        }
+    ],
+    "name": "Patient List"
 }

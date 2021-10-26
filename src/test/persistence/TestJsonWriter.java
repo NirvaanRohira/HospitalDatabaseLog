@@ -50,7 +50,7 @@ public class TestJsonWriter extends TestJson{
                     "aids", 100);
             list.addPatientData("Casey", 20,50,"Tylenol",
                     "Headache",20);
-            JsonWriter writer = new JsonWriter("./data/testReaderGeneralPatientList.json");
+            JsonWriter writer = new JsonWriter("./data/testWriterGeneralPatientList.json");
             writer.open();
             writer.write(list);
             writer.close();
