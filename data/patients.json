@@ -1,0 +1,11 @@
+{
+    "patients": [{
+        "condition": "Stabbing",
+        "treatmentRecieved": "Stitches",
+        "daysStayed": 3,
+        "name": "Nirvaan",
+        "treatmentCost": 5,
+        "age": 19
+    }],
+    "name": "patientList"
+}

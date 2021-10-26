@@ -2,16 +2,25 @@ package ui;
 
 import model.ListOfPatientData;
 import model.PatientData;
+import persistence.JsonReader;
+import persistence.JsonWriter;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 //Patient Application
 public class PatientApp {
     private Scanner input = new Scanner(System.in);
     private PatientData patient;
-    private final ListOfPatientData buildlist = new ListOfPatientData("patientList");
+    private ListOfPatientData buildlist = new ListOfPatientData("patientList");
+    private static final String JSON_STORE = "./data/patients.json";
+    private final JsonWriter jsonWriter;
+    private final JsonReader jsonReader;
 
     public PatientApp() {
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
         runPatient();
     }
 
@@ -39,7 +48,6 @@ public class PatientApp {
     }
 
 
-
     // EFFECTS: displays menu of options to user
     private void displayMenu() {
         System.out.println("\nSelect from:");
@@ -47,6 +55,8 @@ public class PatientApp {
         System.out.println("\tnext -> view next person");
         System.out.println("\tview -> view list of people");
         System.out.println("\tclear -> clear list of people");
+        System.out.println("\tsave -> save given list of people");
+        System.out.println("\tload -> load saved list of people");
         System.out.println("\tquit -> quit");
 
     }
@@ -74,6 +84,10 @@ public class PatientApp {
             doViewListOfPersons();
         } else if (command.equals("clear")) {
             doClearList();
+        } else if (command.equals("save")) {
+            dosavePatientData();
+        } else if (command.equals("load")) {
+            doLoadPatientData();
         } else {
 
             System.out.println("Invalid Selection...");
@@ -114,7 +128,7 @@ public class PatientApp {
     //EFFECTS: Outputs the current list of patients as is
     public void doViewListOfPersons() {
         for (PatientData patientData : buildlist.getList()) {
-            System.out.println(patientData.getName() + " " + patientData.getTreatmentCost());
+            System.out.println(patientData.getName() + " " + "Cost = " + patientData.getTreatmentCost() + "CAD");
         }
 
 
@@ -126,6 +140,29 @@ public class PatientApp {
         buildlist.clearList();
         System.out.println("All Patient Data has been cleared out successfully");
 
+    }
+
+    // EFFECTS: saves the patientData to file
+    private void dosavePatientData() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(buildlist);
+            jsonWriter.close();
+            System.out.println("Saved " + buildlist.getNameList() + " to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: loads patientData from file
+    private void doLoadPatientData() {
+        try {
+            buildlist = jsonReader.read();
+            System.out.println("Loaded " + buildlist.getNameList() + " from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
+        }
     }
 
 
