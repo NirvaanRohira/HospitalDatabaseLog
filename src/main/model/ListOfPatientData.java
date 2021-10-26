@@ -89,7 +89,7 @@ public class ListOfPatientData implements Writable {
         return patientData.size() == 0;
     }
 
-    // EFFECTS: creates a json object for student list
+    // EFFECTS: creates a json object for Patient list
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
@@ -98,7 +98,7 @@ public class ListOfPatientData implements Writable {
         return json;
     }
 
-    // EFFECTS: returns students in this studentList as a JSON array
+    // EFFECTS: returns students in this PatientList as a JSON array
     private JSONArray patientsToJson() {
         JSONArray jsonArray = new JSONArray();
 

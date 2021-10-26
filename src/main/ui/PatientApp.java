@@ -37,37 +37,7 @@ public class PatientApp {
         System.out.println("\nGoodbye!");
 
     }
-//    private void runPatient() {
-//        System.out.println("\nSelect from:");
-//        System.out.println("\tadd -> add person");
-//        System.out.println("\tnext -> view next person");
-//        System.out.println("\tview -> view list of people");
-//        System.out.println("\tclear -> clear list of people");
-//        System.out.println("\tquit -> quit");
-//        options();
-//    }
 
-//    private void options() {
-//        String options = input.next();
-//        while (options != "quit") {
-//            if (options == "add") {
-//                doAddPerson();
-//                options = input.next();
-//            }
-//            if (options == "next") {
-//                doViewNextPerson();
-//                options = input.next();
-//            }
-//            if (options == "view") {
-//                doViewListOfPersons();
-//                options = input.next();
-//            }
-//            if (options == "clear") {
-//                doClearList();
-//                options = input.next();
-//            }
-//        }
-//    }
 
 
     // EFFECTS: displays menu of options to user
@@ -114,26 +84,6 @@ public class PatientApp {
     // MODIFIES: this
     // EFFECTS: outputs list format of inputted patient data
     private void doAddPerson() {
-//        System.out.print("Add the Patient's Name: ");
-//        String name = input.next();
-//        System.out.print("Add the Patient's Age: ");
-//        int age = Integer.parseInt(input.next());
-//        System.out.print("Add the Patient's Duration of Stay: ");
-//        int stayTime = Integer.parseInt(input.next());
-//        System.out.print("Add the Patient's Treatment Received: ");
-//        String treatmentRecieved = input.next();
-//        System.out.print("Add the Patient's Condition: ");
-//        String condition = input.next();
-//        System.out.print("Add the Patient's Total Cost: ");
-//        int cost = Integer.parseInt(input.next());
-//        PatientData patient = new PatientData(name, age, stayTime, treatmentRecieved, condition, cost);
-//        ListOfPatientData buildlist = new ListOfPatientData("today");
-////        buildlist.addPatientData(patient);
-////        System.out.println("(" + name + " " + age
-////                + " " + stayTime + " " + treatmentRecieved + " " + condition + " " + cost + ")");
-//
-//        buildlist.addPatientData(name, age, stayTime, treatmentRecieved, condition, cost);
-
         System.out.println("Please enter the Patient's Name: ");
         String name = input.next();
         System.out.println("Please enter the Patient's Age: ");
@@ -153,12 +103,15 @@ public class PatientApp {
 
     }
 
+    //MODIFIES: this
+    //Effects: Clears the first patient and outputs the data of the rest of the patients
     public void doViewNextPerson() {
         buildlist.getNextPatientData();
         System.out.println("First Patient Cleared Successfully");
 
     }
 
+    //EFFECTS: Outputs the current list of patients as is
     public void doViewListOfPersons() {
         for (PatientData patientData : buildlist.getList()) {
             System.out.println(patientData.getName() + " " + patientData.getTreatmentCost());
@@ -167,8 +120,11 @@ public class PatientApp {
 
     }
 
+    //MODIFIES: this
+    //EFFECTS: deletes all elements from the list and turns it into an empty list
     public void doClearList() {
         buildlist.clearList();
+        System.out.println("All Patient Data has been cleared out successfully");
 
     }
 

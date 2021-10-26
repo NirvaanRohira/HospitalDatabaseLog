@@ -21,7 +21,7 @@ public class JsonReader {
         this.source = source;
     }
 
-    //EFFECTS: reads a workroom from the given file and returns it;
+    //EFFECTS: reads a ListOfPatientData from the given file and returns it;
     // throws IOException if an error occurs reading data from the file
     public ListOfPatientData read() throws IOException {
         String jsonData = readFile(source);
@@ -29,6 +29,7 @@ public class JsonReader {
         return parsePatientData(jsonObject);
     }
 
+    // EFFECTS: reads source file as string and returns it
     private String readFile(String source) throws IOException {
         StringBuilder contentBuilder = new StringBuilder();
 
@@ -38,7 +39,7 @@ public class JsonReader {
         return contentBuilder.toString();
     }
 
-    //EFFECTS: parses workroom for JSON object and returns it
+    //EFFECTS: parses ListOfPatientData for JSON object and returns it
     private ListOfPatientData parsePatientData(JSONObject jsonObject) {
         String name = jsonObject.getString("name");
         ListOfPatientData pdl = new ListOfPatientData(name);
@@ -58,13 +59,8 @@ public class JsonReader {
 
     }
 
-    // MODIFIES: pd
-    // EFFECTS: parses thingy from JSON object  this.name = name;
-    //        this.age = age;
-    //        this.daysStayed = daysStayed;
-    //        this.treatmentReceived = treatmentReceived;
-    //        this.condition = condition;
-    //        this.treatmentCost = treatmentCost; and adds it to workroom
+    // MODIFIES: pdl
+    // EFFECTS: parses thingy from JSON object
     private void addPatient(ListOfPatientData pdl, JSONObject jsonObject) {
         String name = jsonObject.getString("name");
         int age = jsonObject.getInt("age");

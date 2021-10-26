@@ -56,7 +56,7 @@ public class PatientData implements Writable {
         return this.treatmentCost;
     }
 
-    // EFFECTS: Creates a json object of student profile
+    // EFFECTS: Creates a json object of Patient profile
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();

@@ -6,6 +6,8 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+// Represents a writer that writes JSON representation of workroom to file
+//CITATION: JsonSerializationDemo
 
 public class JsonWriter {
     private static final int TAB = 4;
