@@ -32,3 +32,10 @@ search and believe that designing one will help me gain a better understanding o
 - As a user, I want to be able to Add in Condition
 - As a user, I want to be able to Add in Cost
 - As a user, I want to be able to input and view these in the console.
+
+##Phase 2 User Stories
+- As a user, I want to be able to view the Names and Cost entered into the list
+- As a user, I want to be able to clear the list completely
+- As a user, I want to be able to clear the first patient from the list and view the rest
+- As a user, I want to be able to save an entered list of patient data
+- As a user, I want to be able to load an entered list of patient data

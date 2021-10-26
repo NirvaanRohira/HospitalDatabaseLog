@@ -132,5 +132,53 @@ public class ListOfPatientDataTest {
         assertFalse(newlist.isEmpty());
 
     }
+
+    @Test
+    void testViewListEmpty() {
+        assertEquals(0, newlist.getList().size() );
+
+
+    }
+    @Test
+    void testViewListNotEmptyInList() {
+        newlist.addPatientData(p1.getName(), p1.getDaysStayed(), p1.getDaysStayed(), p1.getTreatmentReceived(),
+                p1.getCondition(), p1.getTreatmentCost());
+        assertFalse(newlist.viewList().isEmpty());
+        assertEquals(1, newlist.viewList().size());
+
+
+
+
+    }
+
+    @Test
+    void testGetListNull() {
+        assertEquals(0, newlist.getList().size());
+    }
+    @Test
+    void testGetListNotEmpty() {
+        newlist.addPatientData(p1.getName(), p1.getDaysStayed(), p1.getDaysStayed(), p1.getTreatmentReceived(),
+                p1.getCondition(), p1.getTreatmentCost());
+        assertEquals(1, newlist.getList().size());
+
+    }
+    @Test
+    void testClearListEmpty() {
+        newlist.clearList();
+        assertEquals(0, newlist.length());
+
+    }
+    @Test
+    void testClearListNotEmpty() {
+        newlist.addPatientData(p1.getName(), p1.getDaysStayed(), p1.getDaysStayed(), p1.getTreatmentReceived(),
+                p1.getCondition(), p1.getTreatmentCost());
+        newlist.addPatientData(p1.getName(), p1.getDaysStayed(), p1.getDaysStayed(), p1.getTreatmentReceived(),
+                p1.getCondition(), p1.getTreatmentCost());
+        newlist.clearList();
+        assertEquals(0, newlist.length());
+
+
+
+    }
 }
 

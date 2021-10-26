@@ -22,6 +22,7 @@ public class PatientData {
         this.treatmentCost = treatmentCost;
     }
 
+
     //EFFECTS: Gets the name of a given patient
     public String getName() {
         return this.name;

@@ -55,6 +55,8 @@ public class ListOfPatientData {
         return null;
     }
 
+    //Effects: takes a Patient data from a list of patientdata  and returns the elements in the list of patient data
+    // else it just returns the list of patient data
     public List<PatientData> viewList() {
         for (PatientData patient : patientData) {
             System.out.println(patient.toString() + " ");
@@ -62,10 +64,13 @@ public class ListOfPatientData {
         return patientData;
     }
 
+    //MODIFIES: this
+    //Effects: removes all the elements in the list and returns an empty list
     public void clearList() {
         patientData.clear();
     }
 
+    //Effects: returns the list of patient data
     public LinkedList<PatientData> getList() {
         return patientData;
     }

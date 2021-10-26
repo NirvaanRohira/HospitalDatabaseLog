@@ -161,7 +161,7 @@ public class PatientApp {
 
     public void doViewListOfPersons() {
         for (PatientData patientData : buildlist.getList()) {
-            System.out.println(patientData.getName());
+            System.out.println(patientData.getName() + " " + patientData.getTreatmentCost());
         }
 
 
