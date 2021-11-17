@@ -79,7 +79,9 @@ public class GuiSwingClass extends JPanel {
     }
 
     // EFFECTS: Create a panel that uses the BoxLayout and adds all the panel functionalities.
+    @SuppressWarnings("methodlength")
     public void createBoxPanel() {
+
         JScrollPane listScrollPane = new JScrollPane(list);
         JPanel buttonPane = new JPanel();
         buttonPane.setLayout(new BoxLayout(buttonPane, BoxLayout.LINE_AXIS));
@@ -109,6 +111,7 @@ public class GuiSwingClass extends JPanel {
     }
 
     //Creates a scrollable list in a panel
+    @SuppressWarnings("methodlength")
     public void listScrollPane() {
         newJList();
         addButton = new JButton(addString);
@@ -273,6 +276,7 @@ public class GuiSwingClass extends JPanel {
         }
 
         // EFFECTS: returns the action performed
+        @SuppressWarnings("methodlength")
         public void actionPerformed(ActionEvent e) {
 
             String name = patientName.getText();
