@@ -80,6 +80,7 @@ public class GuiSwingClass extends JPanel {
     }
 
     // EFFECTS: Create a panel that uses the BoxLayout and adds all the panel functionalities.
+    @SuppressWarnings("methodlength")
     public void createBoxPanel() {
 
         JScrollPane listScrollPane = new JScrollPane(list);
@@ -87,6 +88,7 @@ public class GuiSwingClass extends JPanel {
         buttonPane.setLayout(new BoxLayout(buttonPane, BoxLayout.LINE_AXIS));
         buttonPane.add(loadButton);
         buttonPane.add(saveButton);
+        saveButton.setEnabled(true);
         buttonPane.add(Box.createHorizontalStrut(5));
         buttonPane.add(new JSeparator(SwingConstants.VERTICAL));
         buttonPane.add(Box.createHorizontalStrut(5));
@@ -111,6 +113,7 @@ public class GuiSwingClass extends JPanel {
     }
 
     //Creates a scrollable list in a panel
+    @SuppressWarnings("methodlength")
     public void listScrollPane() {
         newJList();
         addButton = new JButton(addString);
@@ -215,7 +218,7 @@ public class GuiSwingClass extends JPanel {
 
             int size = patientList.getSize();
 
-            saveButton.setEnabled(size != 0);
+            //saveButton.setEnabled(size != 0);
         }
     }
 
@@ -226,9 +229,9 @@ public class GuiSwingClass extends JPanel {
         public void actionPerformed(ActionEvent e) {
 
             //loadPatientData(); just added didnt change anything
-            savePatientData();
+            loadPatientData();
             refreshListOfPatientData();
-            saveButton.setEnabled(true);
+            //saveButton.setEnabled(true);
 
             int size = patientList.getSize();
 
