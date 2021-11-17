@@ -1,13 +1,4 @@
 package ui;
-///tofo:
-//Increase Panel Length of all panels
-// make them move to new line panels
-// Fix Save Feature
-// Fix Load Feature
-// Figure out sound issue
-// Shorten the methods to 25 lines
-// figure why load listener isnt being imported
-//import com.sun.javafx.fxml.LoadListener; - this one
 
 import model.ListOfPatientData;
 import model.PatientData;
@@ -26,6 +17,16 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
+///tofo:
+//Increase Panel Length of all panels
+// make them move to new line panels
+// Fix Save Feature
+// Fix Load Feature
+// Figure out sound issue
+// Shorten the methods to 25 lines
+// figure why load listener isnt being imported
+//import com.sun.javafx.fxml.LoadListener; - this one
 
 //Represents the GUI class using the Java Swing Library
 public class GuiSwingClass extends JPanel {
@@ -77,11 +78,9 @@ public class GuiSwingClass extends JPanel {
 
     // EFFECTS: Create a panel that uses the BoxLayout and adds all the panel functionalities.
     public void createBoxPanel() {
-        //shorten method
         JScrollPane listScrollPane = new JScrollPane(list);
         JPanel buttonPane = new JPanel();
-        buttonPane.setLayout(new BoxLayout(buttonPane,
-                BoxLayout.LINE_AXIS));
+        buttonPane.setLayout(new BoxLayout(buttonPane, BoxLayout.LINE_AXIS));
         buttonPane.add(loadButton);
         buttonPane.add(saveButton);
         buttonPane.add(Box.createHorizontalStrut(5));
@@ -101,10 +100,9 @@ public class GuiSwingClass extends JPanel {
         buttonPane.add(patientCost);
         buttonPane.add(addButton);
         buttonPane.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-
         add(listScrollPane, BorderLayout.CENTER);
         add(buttonPane, BorderLayout.PAGE_END);
-
+//shorten by one line
 
     }
 
@@ -282,19 +280,11 @@ public class GuiSwingClass extends JPanel {
             String treatmentRecieved = patientTreatmentRecieved.getText();
             String condition = patientCondition.getText();
             String cost = patientCost.getText();
-
             int ageConvert = Integer.parseInt(age);
             int daysStayedConvert = Integer.parseInt(daysStayed);
             int costConvert = Integer.parseInt(cost);
-
-
-//            patientList2.addPatientData(new PatientData(name, ageConvert, daysStayedConvert, treatmentRecieved,
-//                    condition, costConvert));
             patientList2.addPatientData(name, ageConvert, daysStayedConvert, treatmentRecieved,
                     condition, costConvert);
-//            ListOfPatientData j = new ListOfPatientData("j");
-//            j.addPatientData("n", 1, 1, "h", "j", 1);
-
             //User didn't type in a unique name...
             if (name.equals("")) {
                 Toolkit.getDefaultToolkit().beep();
@@ -302,7 +292,6 @@ public class GuiSwingClass extends JPanel {
                 patientName.selectAll();
                 return;
             }
-
             patientList.addElement((patientName.getText() + " : " + patientAge.getText() + " : "
                     + patientDaysStayed.getText() + " : " + patientTreatmentRecieved.getText() + " : "
                     + patientCondition.getText() + " : " + patientCost.getText()));
