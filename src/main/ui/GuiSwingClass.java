@@ -278,7 +278,7 @@ public class GuiSwingClass extends JPanel {
             this.button = button;
         }
 
-        // EFFECTS: returns the action performed
+        // EFFECTS: returns the action performed in the class
         public void actionPerformed(ActionEvent e) {
 
             String name = patientName.getText();
