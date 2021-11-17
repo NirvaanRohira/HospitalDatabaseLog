@@ -27,6 +27,7 @@ import java.io.IOException;
 // Shorten the methods to 25 lines
 // figure why load listener isnt being imported
 //import com.sun.javafx.fxml.LoadListener; - this one
+//display an image (maybe on opening say welcome or smth)
 
 //Represents the GUI class using the Java Swing Library
 public class GuiSwingClass extends JPanel {
