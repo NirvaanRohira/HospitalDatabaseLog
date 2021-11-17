@@ -29,6 +29,7 @@ import java.io.IOException;
 //import com.sun.javafx.fxml.LoadListener; - this one
 //display an image (maybe on opening say welcome or smth) - maybe on close?
 //ASK TA IF I CAN USE THE @SupressWarnings foor the long methods!!!
+//Not showing save option before i press load option and not saving and loading
 
 //Represents the GUI class using the Java Swing Library
 public class GuiSwingClass extends JPanel {
@@ -102,7 +103,7 @@ public class GuiSwingClass extends JPanel {
         buttonPane.add(cost);
         buttonPane.add(patientCost);
         buttonPane.add(addButton);
-        buttonPane.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        buttonPane.setBorder(BorderFactory.createEmptyBorder(5, 5, 10, 5));
         add(listScrollPane, BorderLayout.CENTER);
         add(buttonPane, BorderLayout.PAGE_END);
 //shorten by one line

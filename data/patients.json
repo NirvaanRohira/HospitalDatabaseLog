@@ -1,21 +1,11 @@
 {
-    "patients": [
-        {
-            "condition": "Cuts",
-            "treatmentRecieved": "Stitches",
-            "daysStayed": 3,
-            "name": "Nirvaan ",
-            "treatmentCost": 100,
-            "age": 19
-        },
-        {
-            "condition": "kicks",
-            "treatmentRecieved": "cetafil",
-            "daysStayed": 2,
-            "name": "Shantiamos",
-            "treatmentCost": 100,
-            "age": 21
-        }
-    ],
-    "name": "patientList"
+    "patients": [{
+        "condition": "1",
+        "treatmentRecieved": "1",
+        "daysStayed": 1,
+        "name": "11",
+        "treatmentCost": 1,
+        "age": 1
+    }],
+    "name": "Patient List"
 }
