@@ -279,6 +279,7 @@ public class GuiSwingClass extends JPanel {
         }
 
         // EFFECTS: returns the action performed in the class
+        @SuppressWarnings("methodlength")
         public void actionPerformed(ActionEvent e) {
 
             String name = patientName.getText();
