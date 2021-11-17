@@ -15,6 +15,14 @@
             "name": "N",
             "treatmentCost": 1,
             "age": 1
+        },
+        {
+            "condition": "1",
+            "treatmentRecieved": "1",
+            "daysStayed": 1,
+            "name": "mdm",
+            "treatmentCost": 1,
+            "age": 1
         }
     ],
     "name": "Patient List"
