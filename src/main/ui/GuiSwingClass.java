@@ -225,6 +225,7 @@ public class GuiSwingClass extends JPanel {
         // EFFECTS: returns the action performed by the load button
         public void actionPerformed(ActionEvent e) {
 
+            //loadPatientData(); just added didnt change anything
             savePatientData();
             refreshListOfPatientData();
             saveButton.setEnabled(true);
@@ -240,7 +241,7 @@ public class GuiSwingClass extends JPanel {
         }
     }
 
-    // EFFECTS: returns an audio note saved in in the computer under soundName;
+    // EFFECTS: returns an audio note saved in the computer under soundName;
     //          Or throws an exception.
     public void playSound(String soundName) {
         try {
@@ -279,7 +280,6 @@ public class GuiSwingClass extends JPanel {
 
             String name = patientName.getText();
             String age = patientAge.getText();
-            //int number = Integer.parseInt(text);
             String daysStayed = patientDaysStayed.getText();
             String treatmentRecieved = patientTreatmentRecieved.getText();
             String condition = patientCondition.getText();

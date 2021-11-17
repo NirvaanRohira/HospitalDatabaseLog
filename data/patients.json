@@ -1,11 +1,4 @@
 {
-    "patients": [{
-        "condition": "1",
-        "treatmentRecieved": "1",
-        "daysStayed": 1,
-        "name": "11",
-        "treatmentCost": 1,
-        "age": 1
-    }],
+    "patients": [],
     "name": "Patient List"
 }
