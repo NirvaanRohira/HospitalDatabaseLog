@@ -69,7 +69,7 @@ public class GuiSwingClass extends JPanel {
 
     // EFFECTS: Create a panel that uses the BoxLayout and adds all the panel functionalities.
     public void createBoxPanel() {
-        //shorten
+        //shorten method
         JScrollPane listScrollPane = new JScrollPane(list);
         JPanel buttonPane = new JPanel();
         buttonPane.setLayout(new BoxLayout(buttonPane,
