@@ -1,6 +1,14 @@
 package ui;
+///tofo:
+//Increase Panel Length of all panels
+// make them move to new line panels
+// Fix Save Feature
+// Fix Load Feature
+// Figure out sound issue
+// Shorten the methods to 25 lines
+// figure why load listener isnt being imported
+//import com.sun.javafx.fxml.LoadListener; - this one
 
-import com.sun.javafx.fxml.LoadListener;
 import model.ListOfPatientData;
 import model.PatientData;
 import persistence.JsonReader;
