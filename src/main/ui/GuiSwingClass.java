@@ -28,6 +28,7 @@ import java.io.IOException;
 // figure why load listener isnt being imported
 //import com.sun.javafx.fxml.LoadListener; - this one
 //display an image (maybe on opening say welcome or smth) - maybe on close?
+//ASK TA IF I CAN USE THE @SupressWarnings foor the long methods!!!
 
 //Represents the GUI class using the Java Swing Library
 public class GuiSwingClass extends JPanel {
