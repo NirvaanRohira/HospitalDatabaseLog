@@ -15,6 +15,22 @@
             "name": "Nirvaan",
             "treatmentCost": 1,
             "age": 1
+        },
+        {
+            "condition": "Dehydration",
+            "treatmentRecieved": "Electrolytes",
+            "daysStayed": 2,
+            "name": "Vali",
+            "treatmentCost": 20,
+            "age": 19
+        },
+        {
+            "condition": "1",
+            "treatmentRecieved": "1",
+            "daysStayed": 1,
+            "name": "BT",
+            "treatmentCost": 1,
+            "age": 20
         }
     ],
     "name": "Patient List"

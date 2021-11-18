@@ -18,23 +18,19 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-///tofo:
-
-//display an image (maybe on opening say welcome or smth) - maybe on close?
 
 //Represents the GUI class using the Java Swing Library
 public class GuiSwingClass extends JPanel {
     private static final String JSON_STORE = "./data/patients.json";
-    private static final String IMAGE = "./data/HQLogo.png";
+    private static final String IMAGE = "./data/QuitPic.jpeg";
     private final JsonReader jsonReader;
     private final JsonWriter jsonWriter;
 
     private static final String addString = "Add";
     private static final String saveString = "Save";
     private static final String loadString = "Load";
-
+    private static final String quitString = "Quit";
     private ImageIcon image;
-    private JLabel label;
 
     private JList list;
     private JFrame frame;
@@ -44,10 +40,10 @@ public class GuiSwingClass extends JPanel {
     private final JLabel treatmentRecieved = new JLabel("Treatment Recieved: ");
     private final JLabel condition = new JLabel("Condition: ");
     private final JLabel cost = new JLabel("Cost: ");
-    //private JLabel spacer = new JLabel(" ");
     private JButton saveButton;
     private JButton loadButton;
     private JButton addButton;
+    private JButton quitButton;
     private JTextField patientName;
     private JTextField patientAge;
     private JTextField patientDaysStayed;
@@ -71,38 +67,13 @@ public class GuiSwingClass extends JPanel {
         refreshListOfPatientData();
         listScrollPane();
         createBoxPanel();
-        setTestPanel();
 
 
         frame.add(this);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
-        //frame.setIconImage();
-        //frame.setForeground(CYAN);
 
 
-
-    }
-
-    public void setTestPanel() {
-
-        testPanel = new JPanel();
-        testPanel.setBackground(Color.CYAN);
-        testPanel.add(Box.createHorizontalStrut(10));
-
-        JLabel logo = new JLabel();
-        logo.setText("Globe");
-        ImageIcon ic = new ImageIcon(IMAGE);
-        Image glbimage = ic.getImage(); // transform it
-        Image newimgGlb = glbimage.getScaledInstance(25, 25, Image.SCALE_SMOOTH);
-        ic = new ImageIcon(newimgGlb);
-        logo.setFont(new Font("Nunito", Font.BOLD, 26));
-        logo.setIcon(ic);
-        logo.setIconTextGap(8);
-
-        testPanel.add(logo);
-
-        testPanel.add(Box.createHorizontalStrut(10));
     }
 
     // EFFECTS: Create a panel that uses the BoxLayout and adds all the panel functionalities.
@@ -120,7 +91,6 @@ public class GuiSwingClass extends JPanel {
         buttonPane.add(new JSeparator(SwingConstants.VERTICAL));
         buttonPane.add(Box.createHorizontalStrut(5));
         buttonPane.add(name);
-        //buttonPane.add(spacer = new JLabel(" "),"span, grow");
         buttonPane.add(patientName);
         buttonPane.add(age);
         buttonPane.add(patientAge);
@@ -133,10 +103,10 @@ public class GuiSwingClass extends JPanel {
         buttonPane.add(cost);
         buttonPane.add(patientCost);
         buttonPane.add(addButton);
+        buttonPane.add(quitButton);
         buttonPane.setBorder(BorderFactory.createEmptyBorder(5, 5, 100, 50));
         add(listScrollPane, BorderLayout.CENTER);
         add(buttonPane, BorderLayout.PAGE_END);
-
 
 
     }
@@ -164,6 +134,11 @@ public class GuiSwingClass extends JPanel {
         loadButton.setActionCommand(loadString);
         loadButton.addActionListener(new LoadListener());
         loadButton.addActionListener(audioListener);
+
+        quitButton = new JButton(quitString);
+        quitButton.setActionCommand(quitString);
+        quitButton.addActionListener(new PictureListener());
+        quitButton.addActionListener(audioListener);
 
 
         patientName = new JTextField();
@@ -254,6 +229,32 @@ public class GuiSwingClass extends JPanel {
             int size = patientList.getSize();
 
             //saveButton.setEnabled(size != 0);
+        }
+    }
+
+    // EFFECTS: Creates an ActionListener object for quit button to show a picture
+    class PictureListener implements ActionListener {
+
+        // EFFECTS: returns the action performed by the quit button
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JFrame picFrame = new JFrame();
+            JPanel picPanel = new JPanel();
+            JLabel picLabel = new JLabel("Loaded!");
+            JLabel label = new JLabel(new ImageIcon(IMAGE));
+
+            picFrame.setPreferredSize(new Dimension(1500, 1400));
+            picFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            picFrame.pack();
+
+            picPanel.setLayout(null);
+            picFrame.add(picPanel);
+            picFrame.add(label);
+
+            picLabel.setBounds(10, 30, 300, 45);
+            picPanel.add(picLabel);
+            picFrame.setVisible(true);
+
         }
     }
 
@@ -399,24 +400,4 @@ public class GuiSwingClass extends JPanel {
     }
 
 
-//    public static class MyCanvas extends Canvas {
-//
-//        public void paint(Graphics g) {
-//
-//            Toolkit t = Toolkit.getDefaultToolkit();
-//            Image i = t.getImage(IMAGE);
-//            g.drawImage(i, 120, 100, this);
-//
-//        }
-//
-//        public static void main(String[] args) {
-//            MyCanvas m = new MyCanvas();
-//            JFrame f = new JFrame();
-//            f.add(m);
-//            f.setSize(400, 400);
-//            f.setVisible(true);
-//        }
-
 }
-
-
