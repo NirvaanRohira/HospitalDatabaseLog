@@ -120,6 +120,7 @@ public class GuiSwingClass extends JPanel {
     @SuppressWarnings("methodlength")
     public void listScrollPane() {
         newJList();
+        setBackground(Color.CYAN);
         addButton = new JButton(addString);
         AddListener addListener = new AddListener(addButton);
         AudioListener audioListener = new AudioListener();
