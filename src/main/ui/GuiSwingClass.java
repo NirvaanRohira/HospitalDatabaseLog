@@ -19,6 +19,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import static java.awt.Color.CYAN;
+
 ///tofo:
 //Increase Panel Length of all panels
 // make them move to new line panels
@@ -82,6 +84,9 @@ public class GuiSwingClass extends JPanel {
         frame.add(this);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
+        //frame.setIconImage();
+        //frame.setForeground(CYAN);
+
     }
 
     // EFFECTS: Create a panel that uses the BoxLayout and adds all the panel functionalities.
@@ -89,7 +94,7 @@ public class GuiSwingClass extends JPanel {
     public void createBoxPanel() {
 
         JScrollPane listScrollPane = new JScrollPane(list);
-        setBackground(Color.CYAN);
+
         JPanel buttonPane = new JPanel();
         buttonPane.setLayout(new BoxLayout(buttonPane, BoxLayout.LINE_AXIS));
         buttonPane.add(loadButton);
@@ -121,7 +126,7 @@ public class GuiSwingClass extends JPanel {
     @SuppressWarnings("methodlength")
     public void listScrollPane() {
         newJList();
-        setBackground(Color.CYAN);
+        setForeground(CYAN);
         addButton = new JButton(addString);
         AddListener addListener = new AddListener(addButton);
         AudioListener audioListener = new AudioListener();
