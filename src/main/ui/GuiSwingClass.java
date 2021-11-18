@@ -89,6 +89,7 @@ public class GuiSwingClass extends JPanel {
     public void createBoxPanel() {
 
         JScrollPane listScrollPane = new JScrollPane(list);
+        setBackground(Color.CYAN);
         JPanel buttonPane = new JPanel();
         buttonPane.setLayout(new BoxLayout(buttonPane, BoxLayout.LINE_AXIS));
         buttonPane.add(loadButton);
