@@ -42,6 +42,9 @@ public class GuiSwingClass extends JPanel {
     private static final String saveString = "Save";
     private static final String loadString = "Load";
 
+    private ImageIcon image;
+    private JLabel label;
+
     private JList list;
     private JFrame frame;
     private final JLabel name = new JLabel("Name: ");
@@ -361,18 +364,14 @@ public class GuiSwingClass extends JPanel {
 
     }
 
-    class BackgroundImage extends JFrame {
-        private ImageIcon image;
-        private JLabel label;
+    public void BackgroundImage() {
+        setLayout(new FlowLayout());
 
-        public BackgroundImage() {
-            setLayout(new FlowLayout());
-
-            image = new ImageIcon(IMAGE);
-            label = new JLabel(image);
-            add(label);
-        }
-
-
+        image = new ImageIcon(IMAGE);
+        label = new JLabel(image);
+        add(label);
     }
+
+
 }
+
