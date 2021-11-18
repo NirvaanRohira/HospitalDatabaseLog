@@ -5,7 +5,6 @@ import model.PatientData;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 
-import javax.imageio.ImageIO;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -80,12 +79,14 @@ public class GuiSwingClass extends JPanel {
         refreshListOfPatientData();
         listScrollPane();
         createBoxPanel();
+        loadImage();
 
         frame.add(this);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
         //frame.setIconImage();
         //frame.setForeground(CYAN);
+
 
     }
 
@@ -121,6 +122,7 @@ public class GuiSwingClass extends JPanel {
         add(buttonPane, BorderLayout.PAGE_END);
 
     }
+
 
     //Creates a scrollable list in a panel
     @SuppressWarnings("methodlength")
@@ -226,6 +228,7 @@ public class GuiSwingClass extends JPanel {
         public void actionPerformed(ActionEvent e) {
 
             savePatientData();
+            loadImage();
 
             int size = patientList.getSize();
 
@@ -240,6 +243,7 @@ public class GuiSwingClass extends JPanel {
         public void actionPerformed(ActionEvent e) {
 
 
+            loadImage();
             loadPatientData();
             refreshListOfPatientData();
             //saveButton.setEnabled(true);
@@ -407,7 +411,10 @@ public class GuiSwingClass extends JPanel {
 //    JFrame myJFrame = new JFrame("Image pane");
 //myJFrame.setContentPane(new ImagePanel(myImage));
 
+    private void loadImage() {
+        String sep = System.getProperty("file.separator");
+        image = new ImageIcon(IMAGE);
 
-
+    }
 }
 

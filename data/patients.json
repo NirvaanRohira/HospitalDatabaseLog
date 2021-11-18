@@ -1,29 +1,4 @@
 {
-    "patients": [
-        {
-            "condition": "Cuts",
-            "treatmentRecieved": "Stitches",
-            "daysStayed": 2,
-            "name": "NirvaanNirvaan",
-            "treatmentCost": 20,
-            "age": 19
-        },
-        {
-            "condition": "1",
-            "treatmentRecieved": "1",
-            "daysStayed": 1,
-            "name": "N",
-            "treatmentCost": 1,
-            "age": 1
-        },
-        {
-            "condition": "1",
-            "treatmentRecieved": "1",
-            "daysStayed": 1,
-            "name": "mdm",
-            "treatmentCost": 1,
-            "age": 1
-        }
-    ],
+    "patients": [],
     "name": "Patient List"
 }
