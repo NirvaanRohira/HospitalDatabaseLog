@@ -364,13 +364,13 @@ public class GuiSwingClass extends JPanel {
 
     }
 
-    public void BackgroundImage() {
-        setLayout(new FlowLayout());
-
-        image = new ImageIcon(IMAGE);
-        label = new JLabel(image);
-        add(label);
-    }
+//    public void BackgroundImage() {
+//        setLayout(new FlowLayout());
+//
+//        image = new ImageIcon(IMAGE);
+//        label = new JLabel(image);
+//        add(label);
+//    }
 
 
 }
