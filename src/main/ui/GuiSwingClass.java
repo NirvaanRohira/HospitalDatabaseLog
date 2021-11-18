@@ -399,20 +399,7 @@ public class GuiSwingClass extends JPanel {
 //
 //    JFrame myJFrame = new JFrame("Image pane");
 //myJFrame.setContentPane(new ImagePanel(myImage));
-    public static class Test {
 
-        public static void main(String[] args) {
-            JFrame f = new JFrame();
-            try {
-                f.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File(IMAGE)))));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            f.pack();
-            f.setVisible(true);
-        }
-
-    }
 
 
 }
