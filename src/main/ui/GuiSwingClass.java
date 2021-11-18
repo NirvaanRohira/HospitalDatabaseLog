@@ -228,7 +228,7 @@ public class GuiSwingClass extends JPanel {
         // EFFECTS: returns the action performed by the load button
         public void actionPerformed(ActionEvent e) {
 
-            //loadPatientData(); just added didnt change anything
+
             loadPatientData();
             refreshListOfPatientData();
             //saveButton.setEnabled(true);
