@@ -5,6 +5,7 @@ import model.PatientData;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 
+import javax.imageio.ImageIO;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -364,13 +365,54 @@ public class GuiSwingClass extends JPanel {
 
     }
 
-//    public void BackgroundImage() {
+    //    public void BackgroundImage() {
 //        setLayout(new FlowLayout());
 //
 //        image = new ImageIcon(IMAGE);
 //        label = new JLabel(image);
 //        add(label);
 //    }
+//
+//    class ImagePanel extends JComponent {
+//        private Image image;
+//        public ImagePanel(Image image) {
+//            this.image = image;
+//        }
+//        @Override
+//        protected void paintComponent(Graphics g) {
+//            super.paintComponent(g);
+//            g.drawImage(image, 0, 0, this);
+//        }
+//    }
+//
+//    // elsewhere
+//
+//    BufferedImage myImage;
+//
+//    {
+//        try {
+//            myImage = ImageIO.read(new File(IMAGE));
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
+//
+//    JFrame myJFrame = new JFrame("Image pane");
+//myJFrame.setContentPane(new ImagePanel(myImage));
+    public static class Test {
+
+        public static void main(String[] args) {
+            JFrame f = new JFrame();
+            try {
+                f.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File(IMAGE)))));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            f.pack();
+            f.setVisible(true);
+        }
+
+    }
 
 
 }
