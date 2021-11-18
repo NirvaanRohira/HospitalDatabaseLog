@@ -34,6 +34,7 @@ import java.io.IOException;
 //Represents the GUI class using the Java Swing Library
 public class GuiSwingClass extends JPanel {
     private static final String JSON_STORE = "./data/patients.json";
+    private static final String IMAGE = "./data/HQLogo.png";
     private final JsonReader jsonReader;
     private final JsonWriter jsonWriter;
 
@@ -108,7 +109,6 @@ public class GuiSwingClass extends JPanel {
         buttonPane.setBorder(BorderFactory.createEmptyBorder(5, 5, 10, 5));
         add(listScrollPane, BorderLayout.CENTER);
         add(buttonPane, BorderLayout.PAGE_END);
-//shorten by one line
 
     }
 
@@ -358,5 +358,21 @@ public class GuiSwingClass extends JPanel {
             }
             return false;
         }
+
+    }
+
+    class BackgroundImage extends JFrame {
+        private ImageIcon image;
+        private JLabel label;
+
+        public BackgroundImage() {
+            setLayout(new FlowLayout());
+
+            image = new ImageIcon(IMAGE);
+            label = new JLabel(image);
+            add(label);
+        }
+
+
     }
 }
