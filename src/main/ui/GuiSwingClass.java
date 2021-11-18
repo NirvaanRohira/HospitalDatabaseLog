@@ -18,20 +18,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import static java.awt.Color.CYAN;
-
 ///tofo:
 //Increase Panel Length of all panels
 // make them move to new line panels
-// Fix Save Feature
-// Fix Load Feature
-// Figure out sound issue
-// Shorten the methods to 25 lines
-// figure why load listener isnt being imported
-//import com.sun.javafx.fxml.LoadListener; - this one
 //display an image (maybe on opening say welcome or smth) - maybe on close?
-//ASK TA IF I CAN USE THE @SupressWarnings foor the long methods!!!
-//Not showing save option before i press load option and not saving and loading
 
 //Represents the GUI class using the Java Swing Library
 public class GuiSwingClass extends JPanel {
@@ -55,6 +45,7 @@ public class GuiSwingClass extends JPanel {
     private final JLabel treatmentRecieved = new JLabel("Treatment Recieved: ");
     private final JLabel condition = new JLabel("Condition: ");
     private final JLabel cost = new JLabel("Cost: ");
+    //private JLabel spacer = new JLabel(" ");
     private JButton saveButton;
     private JButton loadButton;
     private JButton addButton;
@@ -79,7 +70,7 @@ public class GuiSwingClass extends JPanel {
         refreshListOfPatientData();
         listScrollPane();
         createBoxPanel();
-        loadImage();
+
 
         frame.add(this);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -105,6 +96,7 @@ public class GuiSwingClass extends JPanel {
         buttonPane.add(new JSeparator(SwingConstants.VERTICAL));
         buttonPane.add(Box.createHorizontalStrut(5));
         buttonPane.add(name);
+        //buttonPane.add(spacer = new JLabel(" "),"span, grow");
         buttonPane.add(patientName);
         buttonPane.add(age);
         buttonPane.add(patientAge);
@@ -117,7 +109,7 @@ public class GuiSwingClass extends JPanel {
         buttonPane.add(cost);
         buttonPane.add(patientCost);
         buttonPane.add(addButton);
-        buttonPane.setBorder(BorderFactory.createEmptyBorder(5, 5, 10, 5));
+        buttonPane.setBorder(BorderFactory.createEmptyBorder(5, 5, 100, 50));
         add(listScrollPane, BorderLayout.CENTER);
         add(buttonPane, BorderLayout.PAGE_END);
 
@@ -128,7 +120,6 @@ public class GuiSwingClass extends JPanel {
     @SuppressWarnings("methodlength")
     public void listScrollPane() {
         newJList();
-        setForeground(CYAN);
         addButton = new JButton(addString);
         AddListener addListener = new AddListener(addButton);
         AudioListener audioListener = new AudioListener();
@@ -228,7 +219,7 @@ public class GuiSwingClass extends JPanel {
         public void actionPerformed(ActionEvent e) {
 
             savePatientData();
-            loadImage();
+
 
             int size = patientList.getSize();
 
@@ -243,7 +234,6 @@ public class GuiSwingClass extends JPanel {
         public void actionPerformed(ActionEvent e) {
 
 
-            loadImage();
             loadPatientData();
             refreshListOfPatientData();
             //saveButton.setEnabled(true);
@@ -273,12 +263,14 @@ public class GuiSwingClass extends JPanel {
         }
     }
 
+
     // EFFECTS: Creates an Audio ActionListener object for save,load and add buttons
     class AudioListener implements ActionListener {
 
         // EFFECTS: returns the action performed/audio note on pressing the buttons
         public void actionPerformed(ActionEvent e) {
             playSound("./data/blip.wav");
+            //when button is pressed you show image of a tick
         }
     }
 
@@ -376,44 +368,24 @@ public class GuiSwingClass extends JPanel {
 
     }
 
-    //    public void BackgroundImage() {
-//        setLayout(new FlowLayout());
-//
-//        image = new ImageIcon(IMAGE);
-//        label = new JLabel(image);
-//        add(label);
-//    }
-//
-//    class ImagePanel extends JComponent {
-//        private Image image;
-//        public ImagePanel(Image image) {
-//            this.image = image;
-//        }
-//        @Override
-//        protected void paintComponent(Graphics g) {
-//            super.paintComponent(g);
-//            g.drawImage(image, 0, 0, this);
-//        }
-//    }
-//
-//    // elsewhere
-//
-//    BufferedImage myImage;
-//
-//    {
-//        try {
-//            myImage = ImageIO.read(new File(IMAGE));
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//
-//    JFrame myJFrame = new JFrame("Image pane");
-//myJFrame.setContentPane(new ImagePanel(myImage));
 
-    private void loadImage() {
-        String sep = System.getProperty("file.separator");
-        image = new ImageIcon(IMAGE);
+    public static class MyCanvas extends Canvas {
+
+        public void paint(Graphics g) {
+
+            Toolkit t = Toolkit.getDefaultToolkit();
+            Image i = t.getImage(IMAGE);
+            g.drawImage(i, 120, 100, this);
+
+        }
+
+        public static void main(String[] args) {
+            MyCanvas m = new MyCanvas();
+            JFrame f = new JFrame();
+            f.add(m);
+            f.setSize(400, 400);
+            f.setVisible(true);
+        }
 
     }
 }
