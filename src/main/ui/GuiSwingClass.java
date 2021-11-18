@@ -19,8 +19,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 ///tofo:
-//Increase Panel Length of all panels
-// make them move to new line panels
+
 //display an image (maybe on opening say welcome or smth) - maybe on close?
 
 //Represents the GUI class using the Java Swing Library
@@ -57,6 +56,8 @@ public class GuiSwingClass extends JPanel {
     private JTextField patientCost;
     private final DefaultListModel patientList = new DefaultListModel();
     private ListOfPatientData patientList2 = new ListOfPatientData("Patient List");
+    private JPanel testPanel;
+
 
     //EFFECTS: Creates a Constructor
     public GuiSwingClass() {
@@ -65,11 +66,12 @@ public class GuiSwingClass extends JPanel {
         jsonReader = new JsonReader(JSON_STORE);
 
         frame = new JFrame();
-        frame.setBounds(0, 0, 700, 700);
+        frame.setBounds(0, 0, 7000, 700);
 
         refreshListOfPatientData();
         listScrollPane();
         createBoxPanel();
+        setTestPanel();
 
 
         frame.add(this);
@@ -79,6 +81,28 @@ public class GuiSwingClass extends JPanel {
         //frame.setForeground(CYAN);
 
 
+
+    }
+
+    public void setTestPanel() {
+
+        testPanel = new JPanel();
+        testPanel.setBackground(Color.CYAN);
+        testPanel.add(Box.createHorizontalStrut(10));
+
+        JLabel logo = new JLabel();
+        logo.setText("Globe");
+        ImageIcon ic = new ImageIcon(IMAGE);
+        Image glbimage = ic.getImage(); // transform it
+        Image newimgGlb = glbimage.getScaledInstance(25, 25, Image.SCALE_SMOOTH);
+        ic = new ImageIcon(newimgGlb);
+        logo.setFont(new Font("Nunito", Font.BOLD, 26));
+        logo.setIcon(ic);
+        logo.setIconTextGap(8);
+
+        testPanel.add(logo);
+
+        testPanel.add(Box.createHorizontalStrut(10));
     }
 
     // EFFECTS: Create a panel that uses the BoxLayout and adds all the panel functionalities.
@@ -112,6 +136,8 @@ public class GuiSwingClass extends JPanel {
         buttonPane.setBorder(BorderFactory.createEmptyBorder(5, 5, 100, 50));
         add(listScrollPane, BorderLayout.CENTER);
         add(buttonPane, BorderLayout.PAGE_END);
+
+
 
     }
 
@@ -163,6 +189,10 @@ public class GuiSwingClass extends JPanel {
         patientCost = new JTextField();
         patientCost.addActionListener(new LoadListener());
         patientCost.getDocument().addDocumentListener(addListener);
+
+        image = new ImageIcon(IMAGE);
+        image.getImage();
+        image.setDescription(IMAGE);
 
 
     }
@@ -369,24 +399,24 @@ public class GuiSwingClass extends JPanel {
     }
 
 
-    public static class MyCanvas extends Canvas {
+//    public static class MyCanvas extends Canvas {
+//
+//        public void paint(Graphics g) {
+//
+//            Toolkit t = Toolkit.getDefaultToolkit();
+//            Image i = t.getImage(IMAGE);
+//            g.drawImage(i, 120, 100, this);
+//
+//        }
+//
+//        public static void main(String[] args) {
+//            MyCanvas m = new MyCanvas();
+//            JFrame f = new JFrame();
+//            f.add(m);
+//            f.setSize(400, 400);
+//            f.setVisible(true);
+//        }
 
-        public void paint(Graphics g) {
-
-            Toolkit t = Toolkit.getDefaultToolkit();
-            Image i = t.getImage(IMAGE);
-            g.drawImage(i, 120, 100, this);
-
-        }
-
-        public static void main(String[] args) {
-            MyCanvas m = new MyCanvas();
-            JFrame f = new JFrame();
-            f.add(m);
-            f.setSize(400, 400);
-            f.setVisible(true);
-        }
-
-    }
 }
+
 

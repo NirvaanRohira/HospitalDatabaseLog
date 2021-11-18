@@ -1,11 +1,21 @@
 {
-    "patients": [{
-        "condition": "1",
-        "treatmentRecieved": "1",
-        "daysStayed": 1,
-        "name": "1",
-        "treatmentCost": 1,
-        "age": 1
-    }],
+    "patients": [
+        {
+            "condition": "1",
+            "treatmentRecieved": "1",
+            "daysStayed": 1,
+            "name": "1",
+            "treatmentCost": 1,
+            "age": 1
+        },
+        {
+            "condition": "1",
+            "treatmentRecieved": "1",
+            "daysStayed": 1,
+            "name": "Nirvaan",
+            "treatmentCost": 1,
+            "age": 1
+        }
+    ],
     "name": "Patient List"
 }
