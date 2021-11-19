@@ -31,6 +31,14 @@
             "name": "BT",
             "treatmentCost": 1,
             "age": 20
+        },
+        {
+            "condition": "Deep Cuts",
+            "treatmentRecieved": "Stitches",
+            "daysStayed": 1,
+            "name": "Nirvaan",
+            "treatmentCost": 20,
+            "age": 19
         }
     ],
     "name": "Patient List"
