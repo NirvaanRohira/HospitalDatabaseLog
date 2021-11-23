@@ -29,6 +29,7 @@ public class ListOfPatientData implements Writable {
     //EFFECTS: adds a Patient Profile and returns true
     public boolean addPatientData(String name, int age, int daysStayed, String treatmentReceived,
                                   String condition, int treatmentCost) {
+        EventLog.getInstance().logEvent(new Event("added " + name));
         return patientData.offer(new PatientData(name, age, daysStayed, treatmentReceived, condition, treatmentCost));
 //        this.name = name;
 //        this.age = age;
@@ -44,6 +45,7 @@ public class ListOfPatientData implements Writable {
     //EFFECTS: removes a Patient Profile and returns list
     public PatientData removesPatientData(String name, int age, int daysStayed, String treatmentReceived,
                                           String condition, int treatmentCost) {
+        EventLog.getInstance().logEvent(new Event("removed" + name));
         return patientData.poll();
 
 

@@ -39,3 +39,26 @@ search and believe that designing one will help me gain a better understanding o
 - As a user, I want to be able to clear the first patient from the list and view the rest
 - As a user, I want to be able to save an entered list of patient data
 - As a user, I want to be able to load an entered list of patient data
+
+##Phase 4 Task 2:
+Loaded Patient List from ./data/patients.json
+Tue Nov 23 14:29:49 PST 2021
+added 1
+
+Tue Nov 23 14:29:49 PST 2021
+added Nirvaan
+
+Tue Nov 23 14:29:49 PST 2021
+added Vali
+
+Tue Nov 23 14:29:49 PST 2021
+added BT
+
+Tue Nov 23 14:29:49 PST 2021
+added Nirvaan
+
+Tue Nov 23 14:29:49 PST 2021
+loaded
+
+
+Process finished with exit code 0

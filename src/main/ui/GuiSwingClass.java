@@ -1,5 +1,7 @@
 package ui;
 
+import model.Event;
+import model.EventLog;
 import model.ListOfPatientData;
 import model.PatientData;
 import persistence.JsonReader;
@@ -70,7 +72,20 @@ public class GuiSwingClass extends JPanel {
 
 
         frame.add(this);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            //EFFECTS: Creates an event Log
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                EventLog el = EventLog.getInstance();
+                for (Event next : el) {
+                    System.out.println(next.toString() + "\n");
+                }
+                System.exit(0);
+            }
+        });
+
+
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         frame.setVisible(true);
 
 
@@ -199,6 +214,8 @@ public class GuiSwingClass extends JPanel {
             jsonWriter.open();
             jsonWriter.write(patientList2);
             jsonWriter.close();
+            EventLog.getInstance().logEvent(new Event("saved"));
+            //stringobject.add("Saved " + patientList2.getNameList() + " to " + JSON_STORE);
             System.out.println("Saved " + patientList2.getNameList() + " to " + JSON_STORE);
         } catch (FileNotFoundException e) {
             System.out.println("File Not Found... sorry cannot save " + JSON_STORE);
@@ -210,6 +227,7 @@ public class GuiSwingClass extends JPanel {
     private void loadPatientData() {
         try {
             patientList2 = jsonReader.read();
+            EventLog.getInstance().logEvent(new Event("loaded "));
             System.out.println("Loaded " + patientList2.getNameList() + " from " + JSON_STORE);
         } catch (IOException e) {
             System.out.println("Unable to load data from file... sorry  " + JSON_STORE);
@@ -244,7 +262,8 @@ public class GuiSwingClass extends JPanel {
             JLabel label = new JLabel(new ImageIcon(IMAGE));
 
             picFrame.setPreferredSize(new Dimension(1500, 1400));
-            picFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+            picFrame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
             picFrame.pack();
 
             picPanel.setLayout(null);
@@ -255,6 +274,12 @@ public class GuiSwingClass extends JPanel {
             picPanel.add(picLabel);
             picFrame.setVisible(true);
 
+//            EventLog el = EventLog.getInstance();
+//            for (Event next : el) {
+//                System.out.println(next.toString() + "\n");
+//            }
+//            System.exit(0);
+//
         }
     }
 
