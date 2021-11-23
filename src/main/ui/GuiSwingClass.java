@@ -274,6 +274,7 @@ public class GuiSwingClass extends JPanel {
             picPanel.add(picLabel);
             picFrame.setVisible(true);
 
+
 //            EventLog el = EventLog.getInstance();
 //            for (Event next : el) {
 //                System.out.println(next.toString() + "\n");
