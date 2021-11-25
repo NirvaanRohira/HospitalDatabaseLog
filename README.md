@@ -41,6 +41,9 @@ search and believe that designing one will help me gain a better understanding o
 - As a user, I want to be able to load an entered list of patient data
 
 ##Phase 4 Task 2:
+The log is shown below and is working as intended, when any action regarding save, load or add is called, the 
+appropriate response is called and when added, it says "added" followed by the name of the added person.
+
 Loaded Patient List from ./data/patients.json
 Tue Nov 23 14:29:49 PST 2021
 added 1
@@ -62,3 +65,16 @@ loaded
 
 
 Process finished with exit code 0
+
+
+##Phase 4 Task 3:
+The design presented in my UML diagram very frankly could have been made more streamlined.
+It is currently in a way, quite symmetric in nature as it is not too complicated to see the nature of the relationship
+as essentially the base class which is then called in the UI classes which each call these classes along with 
+classes presented in the persistence package.
+
+After careful re-inspection of my code with the new concepts learned in class, given more time I would most probably 
+the code to make it more readable and streamlined. In terms of specifics I would probably implement the observable 
+interface to reduce coupling between classes. I would also perhapes decompose some methods to make it more organised 
+in my GUISwingClass. Lastly I would perhaps make an abstract Package which I would use to save abstract methods which
+would greatly reduce the issue of making changes.
