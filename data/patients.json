@@ -39,6 +39,14 @@
             "name": "Nirvaan",
             "treatmentCost": 20,
             "age": 19
+        },
+        {
+            "condition": "1",
+            "treatmentRecieved": "1",
+            "daysStayed": 1,
+            "name": "n",
+            "treatmentCost": 1,
+            "age": 1
         }
     ],
     "name": "Patient List"
