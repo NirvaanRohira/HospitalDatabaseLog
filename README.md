@@ -73,8 +73,11 @@ It is currently in a way, quite symmetric in nature as it is not too complicated
 as essentially the base class which is then called in the UI classes which each call these classes along with 
 classes presented in the persistence package.
 
-After careful re-inspection of my code with the new concepts learned in class, given more time I would most probably 
-the code to make it more readable and streamlined. In terms of specifics I would probably implement the observable 
-interface to reduce coupling between classes. I would also perhapes decompose some methods to make it more organised 
-in my GUISwingClass. Lastly I would perhaps make an abstract Package which I would use to save abstract methods which
+After careful re-inspection of my code with the new concepts learned in class, given more time:- 
+- I would most probably refactor the code to make it more readable and streamlined.
+- In terms of specifics I would probably implement the observable 
+interface to reduce coupling between classes. 
+- I would also perhapes decompose some methods to make it more organised 
+in my GUISwingClass. 
+- Lastly I would perhaps make an abstract Package which I would use to save abstract methods which
 would greatly reduce the issue of making changes.
