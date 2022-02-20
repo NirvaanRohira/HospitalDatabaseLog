@@ -47,6 +47,38 @@
             "name": "n",
             "treatmentCost": 1,
             "age": 1
+        },
+        {
+            "condition": "Dick op",
+            "treatmentRecieved": "Dick Op",
+            "daysStayed": 10,
+            "name": "Nirvaan",
+            "treatmentCost": 69000,
+            "age": 69
+        },
+        {
+            "condition": "1",
+            "treatmentRecieved": "11",
+            "daysStayed": 1,
+            "name": "Nirvaan2",
+            "treatmentCost": 1111,
+            "age": 1
+        },
+        {
+            "condition": "gfgf",
+            "treatmentRecieved": "1",
+            "daysStayed": 1,
+            "name": "grg",
+            "treatmentCost": 1,
+            "age": 1
+        },
+        {
+            "condition": "1",
+            "treatmentRecieved": "1",
+            "daysStayed": 1,
+            "name": "Lil",
+            "treatmentCost": 1,
+            "age": 1
         }
     ],
     "name": "Patient List"
